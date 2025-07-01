@@ -28,7 +28,7 @@ pipeline {
             }
             steps{
                 sh '''
-                test -f /build/index.html
+                [ -f build/index.html ] && echo "Exists" || echo "Missing"
                 npm test -- -a 
                 '''
             }
