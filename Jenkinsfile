@@ -29,6 +29,7 @@ pipeline {
             steps{
                 sh '''
                 [ -f /build/index.html ] && echo "Exists" || echo "Missing"
+                npm install react-scripts
                 npm test -- --watchAll 
                 '''
             }
