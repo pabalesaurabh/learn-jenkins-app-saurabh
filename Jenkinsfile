@@ -30,8 +30,7 @@ pipeline {
                 sh '''
                 [ -f /build/index.html ] && echo "Exists" || echo "Missing"
                 npm install react-scripts
-                npm test -- --watchAll 
-                ls -ltr
+                CI=true npm test -- --watchAll=false
                 echo "Testing completed successfully"
                 '''
             }
