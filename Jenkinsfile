@@ -28,8 +28,8 @@ pipeline {
             }
             steps{
                 sh '''
-                [ -f build/index.html ] && echo "Exists" || echo "Missing"
-                npm test -- -a 
+                [ -f /build/index.html ] && echo "Exists" || echo "Missing"
+                npm test -- --watchAll 
                 '''
             }
         }
