@@ -42,14 +42,16 @@ pipeline {
                         '''
                     }
                 }
-                post{
-                    success{
-                        sh 'echo "All successfull"'
-                    }
-                }
+                
             }
         }
 
         
     }
-}
+    post{
+        success{
+            echo Flow complete
+        }
+    }
+    }
+
