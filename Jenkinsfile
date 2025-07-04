@@ -50,7 +50,7 @@ pipeline {
     }
     post{
         success{
-            echo Flow complete
+            echo 'Flow complete successfully'
         }
     }
     }
