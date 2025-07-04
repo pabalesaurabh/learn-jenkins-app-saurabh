@@ -42,6 +42,11 @@ pipeline {
                         '''
                     }
                 }
+                post{
+                    success{
+                        sh 'echo "All successfull"'
+                    }
+                }
             }
         }
 
