@@ -12,6 +12,7 @@ pipeline {
             }
             steps {
                 sh '''
+                echo "This is to check githook scm"
                 ls -la
                 node --version
                 npm ci
