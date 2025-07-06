@@ -14,6 +14,7 @@ pipeline {
         steps{
             sh 'aws --version'
         }
+        }
         
         stage('Build') {
             agent{
