@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     stages {
 
         stage('AWS-Docker'){
@@ -8,6 +8,7 @@ pipeline {
                 docker {
                     image 'amazon/aws-cli'
                     args '--entrypoint=""'
+                    reuseNode true
                     }
         }
         steps{
@@ -29,6 +30,7 @@ pipeline {
             }
             }
             steps {
+                cleanWs()
                 sh '''
                 echo "This is to check githook scm check"
                 ls -la
@@ -50,6 +52,7 @@ pipeline {
                     agent{
                         docker{
                             image 'node:18-alpine'
+                            reuseNode true
                         }
                     }
                     steps{
