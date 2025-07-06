@@ -31,6 +31,7 @@ pipeline {
             }
             steps {
                 cleanWs()
+                checkout scm  // ensures the repo (with package-lock.json) is pulled again
                 sh '''
                 echo "This is to check githook scm check"
                 ls -la
